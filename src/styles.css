@@ -53,25 +53,28 @@ app-root{
 }
 .l-aes-header {
     display: flex;
+    background-color: #fff;
 }
 .l-aes-header__logo {
     background: url('./assets/aquilon-logo.png') no-repeat left;
-    width: 138px;
+    width: 140px;
     height: 45px;
-    padding: .5em 2em .5em .25em;
+    padding: .5em;
+    background-color: #eee;
 }
 .l-aes-header__title {
-    color: #444;
-    font-family: 'Clear Sans Bold';
+    color: #48b2e8;
+    font-family: 'PT Sans';
     display: flex;
     align-items: center;
     flex: 1;
     font-size: 1.4em;
+    padding: 0 .5em;
 }
 .l-aes-header__nav {
     display: flex;
     align-items: center;
-    padding: .5em;
+    padding: .5em 3em;
 }
 .l-aes-header__menu {
     display: flex;
@@ -79,7 +82,7 @@ app-root{
     justify-content: center;
 }
 .l-aes__side {
-    background-color: #112936;
+    background-color: #474c4e;
     font-size: .8em;
     color: #fff;
     width: 7em;
@@ -88,7 +91,7 @@ app-root{
 }
 .l-aes__content {
     flex: 1;
-    border: 1px solid #d6d6d6;
+    background-color: #f4f4f4;
 }
 .profile {
     display: flex;
@@ -96,10 +99,10 @@ app-root{
     cursor: default;
 }
 .profile__logo {
-    background: url('./assets/bp-logo.png') no-repeat right;
+    background: url('./assets/generic-logo.png') no-repeat left;
     background-size: contain;
     height: 50px;
-    padding: 0 5em;
+    width: 100px;
 }
 .profile__user {
     display: flex;
@@ -113,7 +116,7 @@ app-root{
 }
 .nav__tool {
     position: relative;
-    padding: 0 2em;
+    padding: 0 1.5em;
 }
 .side-tool {
     display: flex;
