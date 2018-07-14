@@ -1,0 +1,23 @@
+RESEARCH FOR JAVASCRIPT
+
+Guidelines
+----------
+
+1. Cool things about JavaScript
+2. Best practices
+3. Up and coming features
+4. New standards
+
+...
+(EcmaScript standards here)
+...
+
+Additional JavaScript Research Files
+------------------------------------
+React.JS
+Angular 2+
+Lodash
+Babel
+Webpack 2+
+Node.JS
+
