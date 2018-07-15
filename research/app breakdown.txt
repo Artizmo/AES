@@ -9,6 +9,7 @@ MODULES
 SERVICES
  AES
  User
+ Apps
  Notifications
  Auth
 
@@ -29,4 +30,7 @@ AES-M > User-S > getUser() > user_ML-$
 AES-Header-Nav-C > subscribes > User-S > getUser() > user_ML-$
 
 AES CLICK NOTIFICATIONS SCENARIO
-AES-Header-Nav-C > subscribes > User-S > getUserNotifications() > [notification_ML] > AES-Nav-Menu as data
+AES-Header-Nav-C > subscribes > Notifications-S > getUserNotifications() > [notification_ML] > AES-Nav-Menu-C
+
+AES CLICK APPS SCENARIO
+AES-Header-Nav-C > subscribes > Apps-S > getApps() > [apps-M]-$ > AES-Nav-Menu-C
