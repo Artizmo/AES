@@ -1,0 +1,32 @@
+MODULES
+ AES
+  COMPONENTS
+   AES-Header-Nav
+   AES-Side-Nav
+   AES-Nav-Menu
+    AES-Nav-Menu-Item (...more)
+
+SERVICES
+ AES
+ User
+ Notifications
+ Auth
+
+GUARD
+ Auth
+
+MODELS
+ User
+
+MOCK DATA
+ User
+ Notifications
+ Invoice
+
+AES LOAD SCENARIO
+AES-M > AES-R > Auth-G > Auth-S > getToken() > token in header
+AES-M > User-S > getUser() > user_ML-$
+AES-Header-Nav-C > subscribes > User-S > getUser() > user_ML-$
+
+AES CLICK NOTIFICATIONS SCENARIO
+AES-Header-Nav-C > subscribes > User-S > getUserNotifications() > [notification_ML] > AES-Nav-Menu as data
