@@ -43,47 +43,6 @@ app-root{
     display: flex;
     flex: 1;
 }
-.l-aes {
-    font-family: 'Clear Sans';
-    font-size: .8em;
-    background-color: #f2f2f2;
-    display: flex;
-    flex-direction: column;
-    flex: 1;
-}
-.l-aes__container {
-    display: flex;
-    flex: 1;
-}
-.l-aes-header {
-    display: flex;
-    background-color: #fff;
-}
-.l-aes-header__logo {
-    background: url('./assets/aquilon-logo.png') no-repeat left;
-    width: 140px;
-    height: 45px;
-    padding: .5em;
-}
-.l-aes-header__title {
-    color: #48b2e8;
-    font-family: 'PT Sans';
-    display: flex;
-    align-items: center;
-    flex: 1;
-    font-size: 1.4em;
-    padding: 0 .5em;
-}
-.l-aes-header__nav {
-    display: flex;
-    align-items: center;
-    padding: .5em 3em;
-}
-.l-aes-header__menu {
-    display: flex;
-    align-items: center;
-    justify-content: center;
-}
 .l-aes__side {
     font-family: 'PT Sans';
     background-color: #474c4e;
