@@ -44,17 +44,18 @@ app-root{
     flex: 1;
 }
 .l-aes__side {
-    font-family: 'PT Sans';
-    background-color: #474c4e;
-    font-size: .9em;
+    background-color: #384042;
     color: #fff;
-    width: 7em;
     display: flex;
     flex-direction: column;
+    box-shadow: 0 3px 1px -2px rgba(0,0,0,.2), 0 2px 2px 0 rgba(0,0,0,.14), 0 1px 5px 0 rgba(0,0,0,.12);
 }
 .l-aes__content {
     flex: 1;
-    background-color: #f4f4f4;
+    background-color: #ffffff;
+    display: flex;
+    flex-direction: column;
+    border-top: 1px solid #eee;
 }
 .profile {
     display: flex;
@@ -85,16 +86,19 @@ app-root{
     display: flex;
     flex-direction: column;
     align-items: center;
-    padding: 1em 0;
+    padding: 1em 1.5em;
     cursor: default;
 }
-.side-tool:active {
-    background-color: #ffffff2f;
+.side-tool:hover {
+    background-color: #54626841;
 }
 .side-tool__icon .feather {
     stroke: #48b2e8;
     fill: none;
+    stroke-width: .12em;
+    width: 20px;
+    height: 20px;
 }
 .side-tool__name {
-    padding: .5em;
+    display: none;
 }
