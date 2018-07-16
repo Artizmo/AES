@@ -34,3 +34,14 @@ AES-Header-Nav-C > subscribes > Notifications-S > getUserNotifications() > [noti
 
 AES CLICK APPS SCENARIO
 AES-Header-Nav-C > subscribes > Apps-S > getApps() > [apps-M]-$ > AES-Nav-Menu-C
+
+
+<nav-menu>
+    <...markup>
+    <menu>
+        <list>
+            <item>
+        </list>
+    </menu>
+</nav-menu>
+
