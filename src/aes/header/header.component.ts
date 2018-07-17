@@ -10,17 +10,17 @@ import { Subscriber, Subscription } from '../../../node_modules/rxjs';
 export class HeaderComponent implements OnInit {
   title: string;
   titleSubscription: Subscription;
-  constructor(private aes: AesService) { 
+  constructor(private aes: AesService) {
     this.titleSubscription = this.aes.getPortalTitle()
-      .subscribe(title => this.title = title);
+      .subscribe(title => this.title = `: ${title}`);
   }
 
   ngOnInit() {
-    
+
   }
 
-  test() {    
+  test() {
     this.aes.setPortalTitle('Death Star');
-  }  
+  }
 
 }

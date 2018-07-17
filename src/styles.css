@@ -10,6 +10,7 @@
 */
 
 @import url('https://fonts.googleapis.com/css?family=PT+Sans');
+@import url('https://fonts.googleapis.com/css?family=Open+Sans');
 
 @font-face {
     font-family: 'Clear Sans';
@@ -44,13 +45,13 @@ app-root{
     flex: 1;
 }
 .l-aes__side {
-    background-color: #384042;
+    background-color: #2a3c50;
     color: #fff;
     display: flex;
     flex-direction: column;
-    box-shadow: 0 3px 1px -2px rgba(0,0,0,.2), 0 2px 2px 0 rgba(0,0,0,.14), 0 1px 5px 0 rgba(0,0,0,.12);
 }
 .l-aes__content {
+    color: #2a3c50;;
     flex: 1;
     background-color: #ffffff;
     display: flex;
@@ -90,12 +91,15 @@ app-root{
     cursor: default;
 }
 .side-tool:hover {
-    background-color: #54626841;
+    background-color: #314f726b;
+}
+.side-tool:hover .side-tool__icon .feather {
+    stroke: #fff;
 }
 .side-tool__icon .feather {
     stroke: #48b2e8;
     fill: none;
-    stroke-width: .12em;
+    stroke-width: .05em;
     width: 20px;
     height: 20px;
 }
