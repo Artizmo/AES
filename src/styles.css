@@ -1,6 +1,7 @@
 /* colors
     dark blue: #08222f
     aquilon blue: #48b2e8
+    light blue: #90c9e6
     aquilon green: #98C21F
     aquilon orange: #FF9952
 */
@@ -11,6 +12,7 @@
 
 @import url('https://fonts.googleapis.com/css?family=PT+Sans');
 @import url('https://fonts.googleapis.com/css?family=Open+Sans');
+@import url('https://fonts.googleapis.com/css?family=Work+Sans:400,600');
 
 @font-face {
     font-family: 'Clear Sans';
@@ -49,14 +51,15 @@ app-root{
     color: #fff;
     display: flex;
     flex-direction: column;
+    padding: .25em 0;
 }
 .l-aes__content {
-    color: #2a3c50;;
+    font-family: 'Work Sans';
+    color: #444;
     flex: 1;
     background-color: #ffffff;
     display: flex;
     flex-direction: column;
-    border-top: 1px solid #eee;
 }
 .profile {
     display: flex;
@@ -87,7 +90,7 @@ app-root{
     display: flex;
     flex-direction: column;
     align-items: center;
-    padding: 1em 1.5em;
+    padding: .5em 1em;
     cursor: default;
 }
 .side-tool:hover {
@@ -99,7 +102,7 @@ app-root{
 .side-tool__icon .feather {
     stroke: #48b2e8;
     fill: none;
-    stroke-width: .05em;
+    stroke-width: .12em;
     width: 20px;
     height: 20px;
 }
