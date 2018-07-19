@@ -19,8 +19,13 @@
 }
 .l-aes-header__nav {
     display: flex;
+    margin: 0 1em;
+}
+.l-aes-header__nav .nav__tool {
+    position: relative;
+    display: flex;
     align-items: center;
-    padding: .5em 3em;
+    padding: 0 1.5em;
 }
 .l-aes-header__menu {
     display: flex;

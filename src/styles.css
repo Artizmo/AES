@@ -82,10 +82,6 @@ body {
 .user__name {
     font-weight: bold;
 }
-.nav__tool {
-    position: relative;
-    margin: 0 1.5em;
-}
 .side-tool {
     display: flex;
     flex-direction: column;
@@ -115,16 +111,14 @@ body {
 }
 
 .mat-menu-panel {
-    position: absolute;
-    top: 60px;
-    left: 0;
-    right: 0;
-    background-color: #2A3C50;
+    position: relative;
+    background-color: #2A3C50; 
     color: #fff;
+    left: 0 !important;
 }
 
 .mat-menu-panel button {
-    font-family: 'Work Sans' !important;
+    font-family: 'PT Sans' !important;
     font-size: .8em;
 }
 
@@ -138,4 +132,8 @@ body {
 
 .mat-menu-item:hover {
     background-color: #426b996b !important;
+}
+
+.cdk-overlay-pane {
+    margin-top: 60px;
 }
