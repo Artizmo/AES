@@ -1,0 +1,39 @@
+@import "../../../../../../../variables.scss";
+
+.profile {
+    display: flex;
+    align-items: center;
+    cursor: default;
+    padding: 0 .75em;
+}
+.profile__logo {
+    background: url('../../../../../../../assets/generic-logo.png') no-repeat left;
+    background-size: contain;
+    height: 50px;
+    width: 100px;
+}
+.profile__user {
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    color: #555;
+    padding: 0 1em 0 0;
+    flex: 1;
+}
+.profile__user .user__name {
+    font-weight: 600;
+    flex: 1;
+}
+.profile__user .user__org {
+    flex: 1;
+}
+.profile .feather {
+    transition-duration: .5s;
+    transition-property: transform;
+}
+.rotate {
+    transform: rotate(180deg);
+}
+.profile.selected {
+    background-color: $menu-selected;
+}

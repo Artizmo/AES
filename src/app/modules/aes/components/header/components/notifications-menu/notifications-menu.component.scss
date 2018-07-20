@@ -1,0 +1,10 @@
+@import "../../../../../../../variables.scss";
+
+.nav__tool {
+    display: flex;
+    align-items: center;
+    padding: 0 1.25em;
+}
+.nav__tool.selected {
+    background-color: $menu-selected;
+}

@@ -1,5 +1,5 @@
 import { Component } from '@angular/core';
-import { AesService } from '../services/aes.service';
+import { AesService } from 'services/aes.service';
 
 @Component({
   selector: 'app-root',

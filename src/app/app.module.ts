@@ -1,7 +1,7 @@
 // modules
 import { BrowserModule } from '@angular/platform-browser';
 import { NgModule } from '@angular/core';
-import { AesModule } from '../aes/aes.module';
+import { AesModule } from './modules/aes/aes.module';
 
 // material
 import { MatMenuModule } from '@angular/material/menu';
@@ -11,7 +11,7 @@ import { BrowserAnimationsModule } from '@angular/platform-browser/animations';
 import { AppComponent } from './app.component';
 
 // services
-import { AesService } from '../services/aes.service';
+import { AesService } from 'services/aes.service';
 
 @NgModule({
   declarations: [
@@ -26,7 +26,7 @@ import { AesService } from '../services/aes.service';
   exports: [
     AesModule
   ],
-  providers: [],
+  providers: [AesService],
   bootstrap: [AppComponent]
 })
 export class AppModule { }

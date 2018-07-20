@@ -1,0 +1,30 @@
+.l-aes-header {
+    display: flex;
+    font-size: .8em;
+    background-color: #fff;
+}
+.l-aes-header__logo {
+    background: url('../../../../../assets/aquilon-logo.png') no-repeat left;
+    width: 140px;
+    height: 45px;
+    padding: .5em;
+}
+.l-aes-header__title {
+    color: #48b2e8;
+    display: flex;
+    align-items: center;
+    flex: 1;
+    font-size: 1.4em;
+    padding: 0 2em;
+}
+.l-aes-header__nav,
+.l-aes-header__menu  {
+    display: flex;
+    flex-direction: column;
+}
+apps-menu,
+notifications-menu,
+profile-menu {
+    display: flex;
+    flex: 1;
+}

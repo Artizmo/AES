@@ -1,0 +1,42 @@
+<div class="nav__tool" [matMenuTriggerFor]="notificationMenu" [ngClass]="{'selected': open }">
+  <svg class="feather">
+    <use xlink:href="./assets/feather-sprite.svg#bell"/>
+  </svg>
+  <span style="position: absolute; top: .5em; margin-left: 1em;">
+    <svg class="feather" style="width: 1em; stroke: #fff; stroke-width: .3em; fill: #FF9952;">
+      <use xlink:href="./assets/feather-sprite.svg#circle"/>
+    </svg>
+  </span>
+</div>
+<mat-menu #notificationMenu="matMenu" xPosition="before" [overlapTrigger]="false">
+  <button mat-menu-item>
+    <div style="display: flex; padding: .25em; align-items: center;">
+      <div style="display: flex; align-items: center; justify-content: center; width: 2em; padding: 0 .25em;">
+        <svg class="feather" style="fill: none; stroke: #a1d2eb;">
+          <use xlink:href="./assets/feather-sprite.svg#settings"/>
+        </svg>
+      </div>
+      <div style="flex: 1; padding: 0 .25em; color: #fff;">User Preferences is really long</div>
+    </div>
+  </button>
+  <button mat-menu-item>
+    <div style="display: flex; padding: .25em; align-items: center;">
+      <div style="display: flex; align-items: center; justify-content: center; width: 2em; padding: 0 .25em;">
+        <svg class="feather" style="fill: none; stroke: #a1d2eb;">
+          <use xlink:href="./assets/feather-sprite.svg#aperture"/>
+        </svg>
+      </div>
+      <div style="flex: 1; padding: 0 .25em; color: #fff;">App Settings</div>
+    </div>
+  </button>
+  <button mat-menu-item>
+    <div style="display: flex; padding: .25em; align-items: center;">
+      <div style="display: flex; align-items: center; justify-content: center; width: 2em; padding: 0 .25em;">
+        <svg class="feather" style="fill: none; stroke: #a1d2eb;">
+          <use xlink:href="./assets/feather-sprite.svg#log-out"/>
+        </svg>
+      </div>
+      <div style="flex: 1; padding: 0 .25em; color: #fff;">Logout</div>
+    </div>
+  </button>
+</mat-menu>
