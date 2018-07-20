@@ -32,3 +32,12 @@
     align-items: center;
     justify-content: center;
 }
+
+.l-aes-header__menu .feather {
+    transition-duration: .5s;
+    transition-property: transform;
+}
+
+.rotate {
+    transform: rotate(180deg);
+}
