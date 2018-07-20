@@ -17,24 +17,11 @@
         </svg>
       </span>
     </div>
-  </div>
-  <div class="l-aes-header__menu" [matMenuTriggerFor]="userMenu">
-    <div class="profile">
-      <div class="profile__user">
-        <div class="user__name">Obi-wan Kenobi, Jedi Master</div>
-        <div class="user__org">BP Energy Company</div>
-      </div>
-      <div style="padding: 0 1em 0 0;">
-        <svg class="feather">
-          <use xlink:href="./assets/feather-sprite.svg#arrow-down"/>
-        </svg>
-      </div>
-    </div>
-    <mat-menu #notificationMenu="matMenu" style="position: absolute; top: 0;">
+    <mat-menu #notificationMenu="matMenu" xPosition="before" [overlapTrigger]="false">
       <button mat-menu-item>
         <div style="display: flex; padding: .25em; align-items: center;">
           <div style="display: flex; align-items: center; justify-content: center; width: 2em; padding: 0 .25em;">
-            <svg class="feather" style="fill: none; stroke: #48b2e8;">
+            <svg class="feather" style="fill: none; stroke: #a1d2eb;">
               <use xlink:href="./assets/feather-sprite.svg#settings"/>
             </svg>
           </div>
@@ -44,7 +31,7 @@
       <button mat-menu-item>
         <div style="display: flex; padding: .25em; align-items: center;">
           <div style="display: flex; align-items: center; justify-content: center; width: 2em; padding: 0 .25em;">
-            <svg class="feather" style="fill: none; stroke: #48b2e8;">
+            <svg class="feather" style="fill: none; stroke: #a1d2eb;">
               <use xlink:href="./assets/feather-sprite.svg#aperture"/>
             </svg>
           </div>
@@ -54,39 +41,7 @@
       <button mat-menu-item>
         <div style="display: flex; padding: .25em; align-items: center;">
           <div style="display: flex; align-items: center; justify-content: center; width: 2em; padding: 0 .25em;">
-            <svg class="feather" style="fill: none; stroke: #48b2e8;">
-              <use xlink:href="./assets/feather-sprite.svg#log-out"/>
-            </svg>
-          </div>
-          <div style="flex: 1; padding: 0 .25em; color: #fff;">Logout</div>
-        </div>
-      </button>
-    </mat-menu>
-    <mat-menu #userMenu="matMenu">
-      <button mat-menu-item>
-        <div style="display: flex; padding: .25em; align-items: center;">
-          <div style="display: flex; align-items: center; justify-content: center; width: 2em; padding: 0 .25em;">
-            <svg class="feather" style="fill: none; stroke: #48b2e8;">
-              <use xlink:href="./assets/feather-sprite.svg#settings"/>
-            </svg>
-          </div>
-          <div style="flex: 1; padding: 0 .25em; color: #fff;">User Preferences is way too long. Seriously.</div>
-        </div>
-      </button>
-      <button mat-menu-item>
-        <div style="display: flex; padding: .25em; align-items: center;">
-          <div style="display: flex; align-items: center; justify-content: center; width: 2em; padding: 0 .25em;">
-            <svg class="feather" style="fill: none; stroke: #48b2e8;">
-              <use xlink:href="./assets/feather-sprite.svg#aperture"/>
-            </svg>
-          </div>
-          <div style="flex: 1; padding: 0 .25em; color: #fff;">App Settings</div>
-        </div>
-      </button>
-      <button mat-menu-item>
-        <div style="display: flex; padding: .25em; align-items: center;">
-          <div style="display: flex; align-items: center; justify-content: center; width: 2em; padding: 0 .25em;">
-            <svg class="feather" style="fill: none; stroke: #48b2e8;">
+            <svg class="feather" style="fill: none; stroke: #a1d2eb;">
               <use xlink:href="./assets/feather-sprite.svg#log-out"/>
             </svg>
           </div>
@@ -95,4 +50,52 @@
       </button>
     </mat-menu>
   </div>
+  <div class="l-aes-header__menu" [matMenuTriggerFor]="userMenu">
+    <div class="profile">
+      <div class="profile__user">
+        <div class="user__name">Obi-wan Kenobi, Jedi Master</div>
+        <div class="user__org">BP Energy Company</div>
+      </div>
+      <div style="padding: 0 1em 0 0;">
+        <svg class="feather" *ngIf="!userMenuState">
+          <use xlink:href="./assets/feather-sprite.svg#arrow-down"/>
+        </svg>
+        <svg class="feather" *ngIf="userMenuState">
+          <use xlink:href="./assets/feather-sprite.svg#arrow-up"/>
+        </svg>
+      </div>
+    </div>
+  </div>
+  <mat-menu class="full-width-menu" #userMenu="matMenu" xPosition="after" [overlapTrigger]="false">
+      <button mat-menu-item>
+        <div style="display: flex; padding: .25em; align-items: center;">
+          <div style="display: flex; align-items: center; justify-content: center; width: 2em; padding: 0 .25em;">
+            <svg class="feather" style="fill: none; stroke: #a1d2eb;">
+              <use xlink:href="./assets/feather-sprite.svg#settings"/>
+            </svg>
+          </div>
+          <div style="flex: 1; padding: 0 .25em; color: #fff;">User Preferences</div>
+        </div>
+      </button>
+      <button mat-menu-item>
+        <div style="display: flex; padding: .25em; align-items: center;">
+          <div style="display: flex; align-items: center; justify-content: center; width: 2em; padding: 0 .25em;">
+            <svg class="feather" style="fill: none; stroke: #a1d2eb;">
+              <use xlink:href="./assets/feather-sprite.svg#aperture"/>
+            </svg>
+          </div>
+          <div style="flex: 1; padding: 0 .25em; color: #fff;">App Settings</div>
+        </div>
+      </button>
+      <button mat-menu-item>
+        <div style="display: flex; padding: .25em; align-items: center;">
+          <div style="display: flex; align-items: center; justify-content: center; width: 2em; padding: 0 .25em;">
+            <svg class="feather" style="fill: none; stroke: #a1d2eb;">
+              <use xlink:href="./assets/feather-sprite.svg#log-out"/>
+            </svg>
+          </div>
+          <div style="flex: 1; padding: 0 .25em; color: #fff;">Logout</div>
+        </div>
+      </button>
+    </mat-menu>
 </header>

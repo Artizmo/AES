@@ -48,14 +48,14 @@ body {
     font-family: 'PT Sans';
 }
 .l-aes__side {
-    background-color: #2a3c50;
+    background-color: #e4e4e4;
     color: #fff;
     display: flex;
     flex-direction: column;
     padding: .25em 0;
 }
 .l-aes__content {
-    color: #444;
+    color: #777;
     flex: 1;
     background-color: #ffffff;
     display: flex;
@@ -88,12 +88,10 @@ body {
     align-items: center;
     padding: .5em 1em;
     cursor: default;
+    margin: .15em;
 }
 .side-tool:hover {
-    background-color: #426b996b;
-}
-.side-tool:hover .side-tool__icon .feather {
-    stroke: #fff;
+    background-color: #cccccc6b;
 }
 .side-tool__icon .feather {
     stroke: #48b2e8;
@@ -106,15 +104,12 @@ body {
     display: none;
 }
 
-.profile {
-    position: relative;
-}
-
 .mat-menu-panel {
-    position: relative;
-    background-color: #2A3C50; 
+    background-color: #48b2e8; 
     color: #fff;
-    left: 0 !important;
+    position: relative;
+    left: 0;
+    right: 0;
 }
 
 .mat-menu-panel button {
@@ -131,9 +126,16 @@ body {
 }
 
 .mat-menu-item:hover {
-    background-color: #426b996b !important;
+    background-color: #70c3ec !important;
+    fill: red;
 }
 
-.cdk-overlay-pane {
-    margin-top: 60px;
+.mat-menu-item:hover .feather {
+    stroke: #fff !important;
+}
+
+.full-width-menu {
+    position: absolute;
+    left: 0;
+    right: 0;
 }
