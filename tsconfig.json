@@ -1,7 +1,11 @@
 {
   "compileOnSave": false,
   "compilerOptions": {
-    "baseUrl": "./",
+    "baseUrl": "src/app",
+    "paths": {
+      "services/*": ["core/services/*"],
+      "shared/*": ["shared/*"]
+    },
     "outDir": "./dist/out-tsc",
     "sourceMap": true,
     "declaration": false,

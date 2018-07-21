@@ -4,10 +4,10 @@
     <div class="user__org">BP Energy Company</div>
   </div>
   <svg class="feather" [ngClass]="{'rotate': open }">
-    <use xlink:href="./assets/feather-sprite.svg#arrow-down"/>
+    <use xlink:href="./assets/feather-sprite.svg#arrow-up"/>
   </svg>
 </div>
-<mat-menu class="full-width-menu" #profileMenu="matMenu" xPosition="before" [overlapTrigger]="false">
+<mat-menu class="full-width-menu" #profileMenu="matMenu" MenuPositionX="after" xPosition="after" [overlapTrigger]="false">
   <button mat-menu-item>
     <div style="display: flex; padding: .25em; align-items: center;">
       <div style="display: flex; align-items: center; justify-content: center; width: 2em; padding: 0 .25em;">
