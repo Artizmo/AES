@@ -53,6 +53,7 @@ body {
     display: flex;
     flex-direction: column;
     padding: .25em 0;
+    width: 50px;
 }
 .l-aes__content {
     color: #777;
@@ -103,7 +104,12 @@ body {
     stroke-width: 2;
 }
 .side-tool__name {
-    display: none;
+    // display: none;
+    font-size: .5em;
+    color: #444;
+    text-transform: uppercase;
+    word-wrap: break-word;
+    text-align: center;
 }
 
 .mat-menu-panel {
