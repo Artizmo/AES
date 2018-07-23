@@ -66,6 +66,7 @@ body {
     display: flex;
     align-items: center;
     cursor: default;
+    width: 200px;
 }
 .profile__logo {
     background: url('./assets/generic-logo.png') no-repeat left;
@@ -104,7 +105,6 @@ body {
     stroke-width: 2;
 }
 .side-tool__name {
-    // display: none;
     font-size: .5em;
     color: #444;
     text-transform: uppercase;
@@ -115,9 +115,6 @@ body {
 .mat-menu-panel {
     background-color: #48b2e8; 
     color: #fff;
-    position: relative;
-    left: 0;
-    right: 0;
 }
 
 .mat-menu-panel button {
@@ -144,5 +141,6 @@ body {
 
 .full-width-menu {
     position: absolute;
+    left: 0;
     right: 0;
 }
