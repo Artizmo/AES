@@ -1,2 +1,30 @@
 User token check
 https://mherman.org/blog/2017/01/05/token-based-authentication-with-angular/#user-status
+
+Modules
+-Three types
+    pages - modules that handle routing; only loaded once in appmodule or lazily
+    global services - modules with services needed throughout the entire app
+    reusable components - modules with reusable components (material, etc)
+
+Feature Modules
+    -must declare all of the components, directives and pipes it needs
+    -must import commonmodule instead of browsermodule
+    -it doesn't bootstrap anything
+    -each module should have a routing module
+    -every lazy loaded module has its own injector
+
+appmodule > coremodule
+
+-coremodule should perform a check to prevent loading it twice
+
+    export class CoreModule {
+        constructor(@Optional() @SkipSelf() core: CoreModule) {
+            if(core) {
+                throw new Error('CoreModule has already been loaded.')
+            }
+        }
+    }
+
+Shared Modules
+    -
