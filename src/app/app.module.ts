@@ -1,14 +1,14 @@
 // modules
 import { BrowserModule } from '@angular/platform-browser';
 import { NgModule } from '@angular/core';
-import { AesModule } from './modules/aes/aes.module';
+import { CoreModule } from './core/core.module';
 
 // material
 import { MatMenuModule } from '@angular/material/menu';
 import { BrowserAnimationsModule } from '@angular/platform-browser/animations';
 
 // components
-import { AppComponent } from './app.component';
+import { AppComponent } from 'app.component';
 
 // services
 import { AesService } from 'services/aes.service';
@@ -21,10 +21,10 @@ import { AesService } from 'services/aes.service';
     BrowserModule,
     MatMenuModule,
     BrowserAnimationsModule,
-    AesModule
+    CoreModule
   ],
   exports: [
-    AesModule
+    CoreModule
   ],
   providers: [AesService],
   bootstrap: [AppComponent]

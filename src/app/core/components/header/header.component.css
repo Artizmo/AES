@@ -4,7 +4,7 @@
     background-color: #fff;
 }
 .l-aes-header__logo {
-    background: url('../../../../../assets/aquilon-logo.png') no-repeat left;
+    background: url('../../../../assets/aquilon-logo.png') no-repeat left;
     width: 140px;
     height: 45px;
     padding: .5em;
@@ -28,4 +28,9 @@ notifications-menu,
 profile-menu {
     display: flex;
     flex: 1;
+}
+
+.l-aes-header__nav:hover,
+.l-aes-header__menu:hover {
+    background-color: #f4f4f4;
 }

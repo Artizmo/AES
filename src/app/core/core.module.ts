@@ -1,10 +1,17 @@
+/* TODOS
+  [] move thre menu components into a headers module
+*/
 // modules
 import { NgModule } from '@angular/core';
 import { CommonModule } from '@angular/common';
 import { FormsModule } from '@angular/forms';
+import { HttpClientModule } from '@angular/common/http';
+
+// services
+import { AuthService } from 'core/auth/auth.service';
 
 // material
-import { MatMenuModule, MatButtonModule } from '@angular/material';
+import { SharedModule} from '../shared/shared.module';
 import { BrowserAnimationsModule } from '@angular/platform-browser/animations';
 
 // components
@@ -17,14 +24,21 @@ import { AppsMenuComponent } from './components/header/components/apps-menu/apps
   imports: [
     CommonModule,
     BrowserAnimationsModule,
-    MatMenuModule,
-    MatButtonModule,
-    FormsModule
+    SharedModule,
+    FormsModule,
+    HttpClientModule
   ],
   exports: [
     HeaderComponent,
-    FormsModule
+    FormsModule,
+    SharedModule,
+    HttpClientModule
   ],
+  providers: [AuthService],
   declarations: [HeaderComponent, ProfileMenuComponent, NotificationsMenuComponent, AppsMenuComponent]
 })
-export class AesModule { }
+export class CoreModule {
+  constructor() {
+    console.log('auth service should find a valid token')
+  }
+ }

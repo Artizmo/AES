@@ -1,0 +1,21 @@
+[
+    {
+        "id": 101,
+        "firstName": "Darth",
+        "lastName": "Vader",
+        "organization": "Sith, Inc."
+    },
+    {  
+        "id": 102,
+        "firstName": "Boba",
+        "lastName": "Fett",
+        "organization": "The Bounty Hunters' Guild"
+    },
+    {
+        "id": 103,
+        "firstName": "Admiral",
+        "lastName": "Akbar",
+        "organization": "Rebel Co."
+    }
+]
+ 

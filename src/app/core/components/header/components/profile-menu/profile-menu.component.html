@@ -1,14 +1,14 @@
 <div class="profile" [matMenuTriggerFor]="profileMenu" [ngClass]="{'selected': open }">
   <div class="profile__user">
-    <div class="user__name">Obi-wan Kenobi, Jedi Master</div>
-    <div class="user__org">BP Energy Company</div>
+    <div class="user__name">{{user?.firstName}} {{user?.lastName}}</div>
+    <div class="user__org">{{user?.organization}}</div>
   </div>
   <svg class="feather" [ngClass]="{'rotate': open }">
     <use xlink:href="./assets/feather-sprite.svg#arrow-up"/>
   </svg>
 </div>
-<mat-menu class="full-width-menu" #profileMenu="matMenu" MenuPositionX="after" xPosition="after" [overlapTrigger]="false">
-  <button mat-menu-item>
+<mat-menu class="full-width-menu" #profileMenu="matMenu" xPosition="after" [overlapTrigger]="false">
+  <button mat-menu-item (click)="selectUserPreferences()">
     <div style="display: flex; padding: .25em; align-items: center;">
       <div style="display: flex; align-items: center; justify-content: center; width: 2em; padding: 0 .25em;">
         <svg class="feather" style="fill: none; stroke: #a1d2eb;">
