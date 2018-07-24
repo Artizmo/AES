@@ -66,7 +66,7 @@ body {
     display: flex;
     align-items: center;
     cursor: default;
-    width: 200px;
+    // width: 200px;
 }
 .profile__logo {
     background: url('./assets/generic-logo.png') no-repeat left;
@@ -132,15 +132,8 @@ body {
 
 .mat-menu-item:hover {
     background-color: #70c3ec !important;
-    fill: red;
 }
 
 .mat-menu-item:hover .feather {
     stroke: #fff !important;
-}
-
-.full-width-menu {
-    position: absolute;
-    left: 0;
-    right: 0;
 }
