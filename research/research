@@ -26,5 +26,22 @@ appmodule > coremodule
         }
     }
 
-Shared Modules
-    -
+Login Page
+
+LOGIN
+user > logs in > create access token > save access token (local storage) > 
+user redirected to aes portal
+
+AES Portal
+
+AUTH - GET ACCESS TOKEN
+core-M > auth-S > isAuthenticated() > checks for access token (local storage)
+
+AUTH - SET ACCESS TOKEN ON HTTP HEADER
+core-M > http-S > setHeader() > set access token to header as Auth Bearer
+
+AUTH - GET ID TOKEN
+core-M > auth-S > getUserIdToken() with valid access token > return ID token
+
+AUTH - GET USER DATA
+core-M > user-S > getUserById(token.id) > user-Mdl singleton
