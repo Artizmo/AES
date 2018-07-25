@@ -41,7 +41,7 @@ export class ProfileMenuComponent implements OnInit {
     })
 
     this.authService
-      .getUserById(101)
+      .getUserById(104)
       .subscribe((user) => this.user = user)
   }
 
