@@ -7,7 +7,7 @@
     <use xlink:href="./assets/feather-sprite.svg#arrow-up"/>
   </svg>
 </div>
-<mat-menu class="full-width-menu" #profileMenu="matMenu" xPosition="after" [overlapTrigger]="false">
+<mat-menu #profileMenu="matMenu" xPosition="before" [overlapTrigger]="false">
   <button mat-menu-item (click)="selectUserPreferences()">
     <div style="display: flex; padding: .25em; align-items: center;">
       <div style="display: flex; align-items: center; justify-content: center; width: 2em; padding: 0 .25em;">
