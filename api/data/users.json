@@ -16,6 +16,12 @@
         "firstName": "Admiral",
         "lastName": "Akbar",
         "organization": "Rebel Co."
+    },
+    {
+        "id": 104,
+        "firstName": "Han",
+        "lastName": "Solo",
+        "organization": "Smugglers Inc."
     }
 ]
  
