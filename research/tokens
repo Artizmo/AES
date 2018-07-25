@@ -24,3 +24,24 @@ Handling request
 
 user logs in > gets token > token expires in 30 minutes > set observable in app with a 30 minute timer > subscribe to timer >
 timer expires > auth.logout() > redirect to login
+
+aes.service.ts
+    -general app startup functions
+    -creates http interceptors
+    -runs auth procedures
+    -establishes user model singleton
+
+auth.service.ts
+    -uses jwt token functions to validate and get claims (timers, user data, etc.)
+    -logout()
+    -isAuthenticated()
+
+Token scenarios
+user > logs in > refreshes browser
+user > logs in > closes browser > opens browser to portal
+user > logs in > deletes localstorage token
+user > logs in > changes localstorage token
+user > logs in > logs out
+user > logs in > navs to a different site > navs back to portal
+user > logs in > token timer expires
+user > logs in > app idle timer expires
