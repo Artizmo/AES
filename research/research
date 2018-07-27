@@ -29,7 +29,7 @@ appmodule > coremodule
 Login Page
 
 LOGIN
-user > logs in > create access token > save access token (local storage) > 
+user > logs in > creates access token > save access token (local storage) > 
 user redirected to aes portal
 
 AES Portal
