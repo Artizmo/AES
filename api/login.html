@@ -12,22 +12,27 @@
             <input type="text" style="margin: .5em 0;" name="username" />
             <input type="password" style="margin: .5em 0;" name="password" />
             <div style="display: flex; justify-content: center;">
-                <button onclick="login(event)" style="width: 40%; margin: .5em 0;">Login</button>
+                <button onclick="radness.login(event)" style="width: 40%; margin: .5em 0;">Login</button>
             </div>
         </div>
     </form>
 </body>
 <script>
-    function login(e) {
-        let username = document.getElementsByName('username')[0].value
-        let password = document.getElementsByName('password')[0].value
-        axios.post('/api/login', { username, password })
-            .then(res => {
-                console.log('bingo!')
-            }, () => {
-                console.log('no dice!')
-            })
-        e.preventDefault()
-    }
+    let radness = (function() {
+        function login(e) {
+            let username = document.getElementsByName('username')[0].value
+            let password = document.getElementsByName('password')[0].value
+            axios.post('/api/login', { username, password })
+                .then(res => {
+                    console.log('bingo!')
+                }, () => {
+                    console.log('no dice!')
+                })
+            e.preventDefault()
+        }
+        return {
+            login: login
+        }
+    }())
 </script>
 </html>

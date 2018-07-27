@@ -47,13 +47,11 @@ app.use('/api/login', (req, res) => {
                                 .compare(password, pHash.hash)
                                 .then(cres => {
                                     if (cres) {                                         
-                                        // get user id and user roles
-                                        // sign token with user data
-                                        // put token in secure cookie
                                         // return success status and cookie in header
+                                        let token = jwt.sign(user, 'secretkeydude!')
                                         res
                                             .status(200)
-                                            .cookie('aes-token', 1234, { httpOnly: true, path: '/' })
+                                            .cookie('aes-token', token, { httpOnly: true, path: '/' })
                                             .send()
                                     } else {
                                         res
