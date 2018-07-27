@@ -1,6 +1,7 @@
 let express = require('express')
 let app = express()
 let bodyParser = require('body-parser')
+let chalk = require('chalk')
 let port = 4300;
 
 // import routes
@@ -22,5 +23,5 @@ app.use('/api/users', USERS_ROUTES)
 
 // start server
 app.listen(port, function() {
-    console.log(`AES mock API started on port ${port}`)
+    console.log(chalk.hex('#FFFF00')(`AES mock API started on port ${port}`))
 })
