@@ -45,3 +45,10 @@ user > logs in > logs out
 user > logs in > navs to a different site > navs back to portal
 user > logs in > token timer expires
 user > logs in > app idle timer expires
+
+
+TOKEN STORAGE
+-store token in cookie
+-have server set cookie to HttpOnly and Secure: true (prevents XSS attacks and requires HTTPS)
+-use samesite restriction (prevents CSRF attacks)
+-have angular http injector set every request to pass the cookie in the header
