@@ -31,7 +31,7 @@ app.use(function(req, res, next) {
 // register routes
 app.use('/api/users', USERS_ROUTES)
 
-app.use('/api/login', (req, res) => {
+app.post('/api/login', (req, res) => {
     // get username and password
     let username = req.body.username
     let password = req.body.password
@@ -62,6 +62,12 @@ app.use('/api/login', (req, res) => {
                     })
             }
         })    
+})
+app.get('/api/logout', (req, res) => {
+    res
+        .status(200)
+        .clearCookie('aes-token')
+        .send()
 })
 
 // login page

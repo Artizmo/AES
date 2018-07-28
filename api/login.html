@@ -11,28 +11,46 @@
         <div style="width: 15%; display: flex; flex-direction: column;">
             <input type="text" style="margin: .5em 0;" name="username" />
             <input type="password" style="margin: .5em 0;" name="password" />
-            <div style="display: flex; justify-content: center;">
-                <button onclick="radness.login(event)" style="width: 40%; margin: .5em 0;">Login</button>
+            <div style="display: flex; flex-direction: column; justify-content: center;">
+                <button onclick="radness.login(event)" style="margin: .5em 0;">login</button>
+                <button onclick="radness.logout(event)" style="margin: .5em 0;">logout</button>
+                <button onclick="radness.nav(event)" style="margin: .5em 0;">goto portal</button>
             </div>
         </div>
     </form>
 </body>
 <script>
-    let radness = (function() {
-        function login(e) {
+    let radness = (() => {
+        state = {
+            isLoggedin: false
+        }
+        login = e => {
             let username = document.getElementsByName('username')[0].value
             let password = document.getElementsByName('password')[0].value
             axios.post('/api/login', { username, password })
                 .then(res => {
-                    console.log('bingo!')
+                    this.state.isLoggedin = true
                 }, () => {
-                    console.log('no dice!')
                 })
             e.preventDefault()
         }
-        return {
-            login: login
+        logout = e => {
+            axios.get('/api/logout')
+                .then(res => {
+                    this.state.isLoggedin = false
+                }, () => {
+                })
+            e.preventDefault()
         }
-    }())
+        nav = e => {
+            window.location = 'http://localhost:4200'
+            e.preventDefault()
+        }
+        return {
+            login: login,
+            logout: logout,
+            nav: nav
+        }
+    })()
 </script>
 </html>
