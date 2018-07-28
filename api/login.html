@@ -1,6 +1,25 @@
 <!DOCTYPE html>
 <html>
 <head>
+<<<<<<< HEAD
+    <title>Login</title>
+</head>
+<script>
+    function setCookie(name,value,days) {
+        var expires = ""
+        if (days) {
+            var date = new Date()
+            date.setTime(date.getTime() + (days*24*60*60*1000))
+            expires = "; expires=" + date.toUTCString()
+        }
+        document.cookie = name + "=" + (value || "")  + expires + "; path=/"
+    }
+    setCookie('token', 1234, 2)
+</script>
+<body>
+    login
+</body>
+=======
     <title>Star Wars Login</title>
 </head>
 <script src="https://cdnjs.cloudflare.com/ajax/libs/axios/0.18.0/axios.min.js"></script>
@@ -53,4 +72,5 @@
         }
     })()
 </script>
+>>>>>>> 2f06a05f11c38f37a89b405ae2ece0ad6bdcc1ad
 </html>
