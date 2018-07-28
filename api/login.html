@@ -1,6 +1,7 @@
 <!DOCTYPE html>
 <html>
 <head>
+<<<<<<< HEAD
     <title>Login</title>
 </head>
 <script>
@@ -18,4 +19,40 @@
 <body>
     login
 </body>
+=======
+    <title>Star Wars Login</title>
+</head>
+<script src="https://cdnjs.cloudflare.com/ajax/libs/axios/0.18.0/axios.min.js"></script>
+
+<body>
+    <h1>Welcome to SW Login!!</h1>
+    <form>
+        <div style="width: 15%; display: flex; flex-direction: column;">
+            <input type="text" style="margin: .5em 0;" name="username" />
+            <input type="password" style="margin: .5em 0;" name="password" />
+            <div style="display: flex; justify-content: center;">
+                <button onclick="radness.login(event)" style="width: 40%; margin: .5em 0;">Login</button>
+            </div>
+        </div>
+    </form>
+</body>
+<script>
+    let radness = (function() {
+        function login(e) {
+            let username = document.getElementsByName('username')[0].value
+            let password = document.getElementsByName('password')[0].value
+            axios.post('/api/login', { username, password })
+                .then(res => {
+                    console.log('bingo!')
+                }, () => {
+                    console.log('no dice!')
+                })
+            e.preventDefault()
+        }
+        return {
+            login: login
+        }
+    }())
+</script>
+>>>>>>> 2f06a05f11c38f37a89b405ae2ece0ad6bdcc1ad
 </html>

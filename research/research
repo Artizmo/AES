@@ -29,8 +29,7 @@ appmodule > coremodule
 Login Page
 
 LOGIN
-user > logs in > create access token > save access token (local storage) > 
-user redirected to aes portal
+user > logs in > creates JWT token > put token in cookie using HTTPONLY and SECURE
 
 AES Portal
 
