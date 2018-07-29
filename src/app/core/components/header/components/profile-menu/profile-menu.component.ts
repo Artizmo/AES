@@ -6,7 +6,7 @@
 import { Component, OnInit, ViewChild } from '@angular/core';
 
 // services
-import { AuthService } from 'core/auth/auth.service';
+import { UserService } from 'core/services/user.service';
 
 // material
 import { MatMenuTrigger } from '@angular/material/menu';
@@ -28,7 +28,7 @@ export class ProfileMenuComponent implements OnInit {
   user: User;
   @ViewChild(MatMenuTrigger) profileMenu: MatMenuTrigger;
 
-  constructor(private authService: AuthService) {}
+  constructor(private userService: UserService) {}
 
   ngOnInit() {
     this.profileMenu.onMenuClose.subscribe(() => {
@@ -40,8 +40,8 @@ export class ProfileMenuComponent implements OnInit {
       console.log(this.open)
     })
 
-    this.authService
-      .getUserById(101)
+    this.userService
+      .getUserById(104)
       .subscribe((user) => this.user = user)
   }
 
