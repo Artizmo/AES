@@ -107,6 +107,7 @@ SCENARIOS
 2. User forgets password
 https://www.owasp.org/index.php/Forgot_Password_Cheat_Sheet
 https://postmarkapp.com/guides/password-reset-email-best-practices
+https://www.smashingmagazine.com/2017/11/safe-password-resets-with-json-web-tokens/
 
 (initial approach)
 -user provides email address
