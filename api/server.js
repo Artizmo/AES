@@ -51,7 +51,7 @@ app.post('/api/login', (req, res) => {
                                         let token = jwt.sign(user, 'secretkeydude!')
                                         res
                                             .status(200)
-                                            .cookie('aes-token', token, { httpOnly: true, path: '/' })
+                                            .cookie('aes-token', token, { httpOnly: false, sameSite: true, path: '/' })
                                             .send()
                                     } else {
                                         res
