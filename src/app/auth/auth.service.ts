@@ -5,16 +5,15 @@ import { HttpClient } from '@angular/common/http';
   providedIn: 'root'
 })
 export class AuthService {
-    
+
   constructor(private http: HttpClient) {}
 
   isAuthenticated() {
     // check for cookie
-    let cookie = document.cookie;
     // check for cookie expiry
     // intercept http service with cookie in header
     // get user data from token
-    if (cookie) {
+    if (document.cookie) {
       return true
     } else {
       return false
