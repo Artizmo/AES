@@ -40,6 +40,9 @@ https://apps.aquilon.com/login.html
 https://apps.aquilon.com/aes/portal
 
 Token scenarios
+user > logs in
+    1. tokens set in cookies (see below)
+    2.
 user > logs in > refreshes browser
     1. login sets access token and id token in localstorage
     2. app loads
@@ -57,7 +60,13 @@ user > logs in > app idle timer expires
 
 
 TOKEN STORAGE
--store token in cookie
--have server set cookie to HttpOnly and Secure: true (prevents XSS attacks and requires HTTPS)
--use samesite restriction (prevents CSRF attacks)
--have angular http injector set every request to pass the cookie in the header
+-authenticate user
+-generate access token (JWT)
+-generate refresh token (JWT, hash)
+-set refresh token expiry to a day
+-set access token expiry to 5 min
+-place refresh token into cookie
+-set cookie httponly, secure, samesite
+-place access toke in cookie
+-set cookie secure, samesite
+
