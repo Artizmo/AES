@@ -9,7 +9,6 @@ import { Observable } from 'rxjs';
 })
 export class AesService {
   private title = new Subject<string>();
-
   constructor() { }
 
   setPortalTitle(title: string) {

@@ -55,7 +55,7 @@ app.post('/api/login', (req, res) => {
                                             .send()
                                     } else {
                                         res
-                                            .status(401).send()
+                                            .status(418).send()
                                     }
                                 })
                         }

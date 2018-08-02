@@ -7,16 +7,13 @@ import { Component, OnInit, ViewChild } from '@angular/core';
 
 // services
 import { UserService } from 'core/services/user.service';
+import { AuthService } from 'auth/auth.service';
 
 // material
 import { MatMenuTrigger } from '@angular/material/menu';
 
-interface User {
-  id,
-  firstName,
-  lastName,
-  organization
-}
+// models
+import User from '../../../../models/user.model';
 
 @Component({
   selector: 'profile-menu',
@@ -28,7 +25,7 @@ export class ProfileMenuComponent implements OnInit {
   user: User;
   @ViewChild(MatMenuTrigger) profileMenu: MatMenuTrigger;
 
-  constructor(private userService: UserService) {}
+  constructor(private authService: AuthService, private userService: UserService) {}
 
   ngOnInit() {
     this.profileMenu.onMenuClose.subscribe(() => {
@@ -40,9 +37,14 @@ export class ProfileMenuComponent implements OnInit {
       console.log(this.open)
     })
 
-    this.userService
-      .getUserById(104)
-      .subscribe((user) => this.user = user)
+    this.userService.getUser().subscribe(<User>(user) => {
+      this.user = user;
+    })
+  }
+
+  logout() {
+    console.log('logging out!')
+    this.authService.logout()
   }
 
   selectUserPreferences() {

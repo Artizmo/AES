@@ -2,7 +2,7 @@
   [] move thre menu components into a headers module
 */
 // modules
-import { NgModule } from '@angular/core';
+import { NgModule, Optional } from '@angular/core';
 import { CommonModule } from '@angular/common';
 import { FormsModule } from '@angular/forms';
 import { HttpClientModule } from '@angular/common/http';
@@ -22,7 +22,11 @@ import { ProfileMenuComponent } from './components/header/components/profile-men
 import { NotificationsMenuComponent } from './components/header/components/notifications-menu/notifications-menu.component';
 import { AppsMenuComponent } from './components/header/components/apps-menu/apps-menu.component';
 
+// services
 import { UserService } from 'services/user.service';
+import { CookieService } from 'ngx-cookie-service';
+import { AuthService } from 'auth/auth.service';
+import { SkipSelf } from '@angular/core';
 
 const routes: Routes = [
   {
@@ -44,12 +48,19 @@ const routes: Routes = [
   exports: [
     RouterModule,
     CoreComponent,
-    HeaderComponent,    
+    HeaderComponent,
     FormsModule,
     SharedModule,
     HttpClientModule
   ],
-  providers: [UserService],
+  providers: [AuthService, CookieService, UserService],
   declarations: [CoreComponent, HeaderComponent, ProfileMenuComponent, NotificationsMenuComponent, AppsMenuComponent]
 })
-export class CoreModule {}
+export class CoreModule {
+  constructor (@Optional() @SkipSelf() parentModule: CoreModule) {
+    if (parentModule) {
+      throw new Error(
+        'CoreModule is already loaded. Import it in the AppModule only');
+    }
+  }
+}
