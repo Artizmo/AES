@@ -44,3 +44,43 @@ core-M > auth-S > getUserIdToken() with valid access token > return ID token
 
 AUTH - GET USER DATA
 core-M > user-S > getUserById(token.id) > user-Mdl singleton
+
+
+USER OPENS AN APP FROM APP STORE
+
+__handleAppClick(UUID): {
+    this.appService.load(UUID)
+}
+
+/aes/portal/esn
+
+canActivate {
+    user must have app access
+    user must have at least one app role
+}
+
+esn app module {
+    constructor(appService) {
+        this.appService.load(UUID)
+    }
+}
+
+-user expands app store menu
+-user selects ESN app from menu
+-app service redirects to ESN app route
+-route runs canActivate logic
+ -user must have ESN app access
+ -user must have at least one ESN app role
+-route lazy loads ESN module
+ -ESN module should depend on app module
+-ESN module will load main component
+-main component will call app service load(ESN app UUID)
+-app module should be lazy loaded on first app load
+-should only load app module regardless of apps loaded
+-app module will export apps tab component
+-ESN app will use app tab component in its template
+-app tab component will subscribe to app service fns
+
+
+/aes/portal/apps        -lazy loads app module, component loads <app-tabs> and <router-outlet>
+/aes/portal/apps/esn    -lazy loads esn module
