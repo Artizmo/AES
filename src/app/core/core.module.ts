@@ -13,7 +13,7 @@ import { SharedModule} from 'shared/shared.module';
 import { BrowserAnimationsModule } from '@angular/platform-browser/animations';
 
 // guards
-import { AuthGuard } from 'core/guards/auth.guard';
+import { AuthGuard } from './guards/auth.guard';
 
 // components
 import { CoreComponent } from './core.component';
@@ -25,14 +25,24 @@ import { AppsMenuComponent } from './components/header/components/apps-menu/apps
 // services
 import { UserService } from 'services/user.service';
 import { CookieService } from 'ngx-cookie-service';
-import { AuthService } from 'auth/auth.service';
+import { AuthService } from 'services/auth.service';
 import { SkipSelf } from '@angular/core';
 
 const routes: Routes = [
   {
     path: '',
     component: CoreComponent,
-    canActivate: [AuthGuard]
+    canActivate: [AuthGuard],
+    children: [
+      {
+        path: 'esn',
+        loadChildren: './modules/esn/esn.module#EsnModule'
+      },
+      {
+        path: 'messages',
+        loadChildren: './modules/message/message.module#MessageModule'
+      }
+    ]
   }
 ];
 

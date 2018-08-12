@@ -90,7 +90,8 @@ body {
     padding: .5em 0.75em;
     cursor: default;
     margin: .5em .15em;
-    user-select: none
+    user-select: none;
+    outline: none;
 }
 .side-tool:hover {
     background-color: #cccccc6b;
@@ -112,7 +113,7 @@ body {
 }
 
 .mat-menu-panel {
-    background-color: #48b2e8; 
+    background-color: #48b2e8;
     color: #fff;
 }
 

@@ -2,7 +2,7 @@
   <aes-header></aes-header>
   <div class="l-aes__container">
     <div class="l-aes__side">
-      <div class="side-tool">
+      <div class="side-tool" [routerLink]="['/messages']">
         <div class="side-tool__icon">
           <svg class="feather">
             <use xlink:href="./assets/feather-sprite.svg#mail"/>
@@ -44,7 +44,8 @@
       </div>
     </div>
     <div class="l-aes__content">
-      <div style="border-bottom: 1px solid #d6d6d6; display: flex; background-color: #f2f2f2; padding: .5em 0 0 0;">
+      <router-outlet></router-outlet>
+      <!-- <div style="border-bottom: 1px solid #d6d6d6; display: flex; background-color: #f2f2f2; padding: .5em 0 0 0;">
         <div style="display: flex; align-items: center; border-style: solid; border-color: #d6d6d6; border-width: 1px 1px 0 1px; border-top-left-radius: .25em; border-top-right-radius: .25em; width: 8em; padding: .25em; margin: 0 .25em -1px .5em; background-color: #fff;">
           <div style="width: 25%; display: flex; justify-content: center;">
             <svg style="width: 18px; height: 18px; fill: none; stroke: #48b2e8;" class="feather">
@@ -86,19 +87,19 @@
             <svg style="width: 15px; height: 15px; fill: none; stroke: #aaa;" class="feather">
               <use xlink:href="./assets/feather-sprite.svg#home"/>
             </svg>
-            <span style="padding: 0 .15em; color: #48b2e8;">ESN Home</span> 
+            <span style="padding: 0 .15em; color: #48b2e8;">ESN Home</span>
             <svg style="width: 15px; height: 15px; fill: none; stroke: #aaa;" class="feather">
               <use xlink:href="./assets/feather-sprite.svg#chevron-right"/>
             </svg>
-            <span style="padding: 0 .15em; color: #48b2e8;">Tie Outs</span> 
+            <span style="padding: 0 .15em; color: #48b2e8;">Tie Outs</span>
             <svg style="width: 15px; height: 15px; fill: none; stroke: #aaa;" class="feather">
               <use xlink:href="./assets/feather-sprite.svg#chevron-right"/>
             </svg>
-            <span style="padding: 0 .15em; color: #48b2e8;">1738</span> 
+            <span style="padding: 0 .15em; color: #48b2e8;">1738</span>
             <svg style="width: 15px; height: 15px; fill: none; stroke: #aaa;" class="feather">
               <use xlink:href="./assets/feather-sprite.svg#chevron-right"/>
             </svg>
-            <span style="padding: 0 .15em; color: #48b2e8;">Invoices</span> 
+            <span style="padding: 0 .15em; color: #48b2e8;">Invoices</span>
             <svg style="width: 15px; height: 15px; fill: none; stroke: #aaa;" class="feather">
               <use xlink:href="./assets/feather-sprite.svg#chevron-right"/>
             </svg>
@@ -116,7 +117,7 @@
             </div>
           </div>
         </div>
-      </div>
+      </div> -->
     </div>
   </div>
 </div>

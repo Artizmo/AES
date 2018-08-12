@@ -6,21 +6,22 @@ import { FormsModule } from '@angular/forms';
 // material
 import { MatMenuModule, MatButtonModule } from '@angular/material';
 
-import { BrowserAnimationsModule } from '@angular/platform-browser/animations';
+// components
+import { AppHeaderComponent } from 'core/components/app-header/app-header.component';
 
 @NgModule({
-  declarations: [],
+  declarations: [AppHeaderComponent],
   imports: [
     CommonModule,
-    BrowserAnimationsModule,
     MatMenuModule,
     MatButtonModule,
-    FormsModule    
+    FormsModule
   ],
   exports: [
     FormsModule,
     MatMenuModule,
-    MatButtonModule
+    MatButtonModule,
+    AppHeaderComponent
   ]
 })
 export class SharedModule { }

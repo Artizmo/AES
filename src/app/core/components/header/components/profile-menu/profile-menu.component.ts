@@ -6,8 +6,8 @@
 import { Component, OnInit, ViewChild } from '@angular/core';
 
 // services
-import { UserService } from 'core/services/user.service';
-import { AuthService } from 'auth/auth.service';
+import { UserService } from 'services/user.service';
+import { AuthService } from 'services/auth.service';
 
 // material
 import { MatMenuTrigger } from '@angular/material/menu';
