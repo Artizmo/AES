@@ -26,6 +26,7 @@ import { AppsMenuComponent } from './components/header/components/apps-menu/apps
 import { UserService } from 'services/user.service';
 import { CookieService } from 'ngx-cookie-service';
 import { AuthService } from 'services/auth.service';
+import { AppService } from 'services/app.service';
 import { SkipSelf } from '@angular/core';
 
 const routes: Routes = [
@@ -63,7 +64,7 @@ const routes: Routes = [
     SharedModule,
     HttpClientModule
   ],
-  providers: [AuthService, CookieService, UserService],
+  providers: [AppService, AuthService, CookieService, UserService],
   declarations: [CoreComponent, HeaderComponent, ProfileMenuComponent, NotificationsMenuComponent, AppsMenuComponent]
 })
 export class CoreModule {

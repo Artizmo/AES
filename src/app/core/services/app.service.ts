@@ -1,8 +1,8 @@
+// angular modules
 import { Injectable } from '@angular/core';
 
 // rxjs
-import { Subject } from 'rxjs';
-import { Observable } from 'rxjs';
+import { Observable, Subject } from 'rxjs';
 
 interface App {
   UUID: string,
@@ -13,31 +13,23 @@ interface App {
   providedIn: 'root'
 })
 export class AppService {
-  public current = new Subject<App>();
-  public loaded = {}
+  loadedApplications = {};
+  private currentApplicationSubject = new Subject<App>();
+  public currentApplication$ = this.currentApplicationSubject.asObservable();
+
   constructor() { }
 
-  load(app: App): Boolean {
-    if (!this.loaded[app.UUID]) {
-      this.loaded[app.UUID] = app
-      this.current.next(app);
-      return true;
-    } else { return false; }
+  load(app: App) {
+    if (!this.loadedApplications[app.UUID]) {
+      this.loadedApplications[app.UUID] = app;
+    }
+    this.currentApplicationSubject.next(app);
   }
 
-  unload(app: App): Boolean {
-    if (this.loaded[app.UUID]) {
-      try {
-        delete this.loaded[app.UUID];
-        return true;
-      } catch (e) {
-        return false;
-      }
+  unload(app: App) {
+    if (this.loadedApplications[app.UUID]) {
+      delete this.loadedApplications[app.UUID];
     }
   }
-
-  // getPortalTitle(): Observable<string> {
-  //   return this.title.asObservable();
-  // }
 
 }
