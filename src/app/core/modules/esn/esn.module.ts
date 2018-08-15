@@ -6,13 +6,17 @@ import { CommonModule } from '@angular/common';
 // modules
 import { SharedModule} from 'shared/shared.module';
 
+// guards
+import { AuthGuard } from '../../guards/auth.guard';
+
 // components
 import { MainComponent } from './components/main/main.component';
 
 const routes: Routes = [
   {
     path: '',
-    component: MainComponent
+    component: MainComponent,
+    canActivate: [AuthGuard],
   }
 ];
 
