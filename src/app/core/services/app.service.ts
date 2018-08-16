@@ -2,34 +2,45 @@
 import { Injectable } from '@angular/core';
 
 // rxjs
-import { Observable, Subject } from 'rxjs';
+import { ReplaySubject } from 'rxjs';
 
 interface App {
   UUID: string,
   title: string
 }
 
+interface AppState {
+  current: App,
+  loaded: {[key: string]: App}
+}
+
 @Injectable({
   providedIn: 'root'
 })
 export class AppService {
-  loadedApplications = {};
-  private currentApplicationSubject = new Subject<App>();
-  public currentApplication$ = this.currentApplicationSubject.asObservable();
+  private __applications: AppState = {
+    loaded: {},
+    current: { UUID: '', title: ''}
+  };
+  private __applicationsSubject = new ReplaySubject();
+  public applications$ = this.__applicationsSubject.asObservable();
 
   constructor() { }
 
   load(app: App) {
-    if (!this.loadedApplications[app.UUID]) {
-      this.loadedApplications[app.UUID] = app;
+    if (!this.__applications.loaded[app.UUID]) {
+      this.__applications.loaded[app.UUID] = app;
     }
-    this.currentApplicationSubject.next(app);
+    this.__applications.current = app;
+    this.__applicationsSubject.next(this.__applications);
   }
 
   unload(app: App) {
-    if (this.loadedApplications[app.UUID]) {
-      delete this.loadedApplications[app.UUID];
+    if (this.__applications.loaded[app.UUID]) {
+      delete this.__applications.loaded[app.UUID];
     }
+    // if app is also current, be sure to set current to next app    
+    this.__applicationsSubject.next(this.__applications);
   }
 
 }

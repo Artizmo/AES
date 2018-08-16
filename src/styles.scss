@@ -43,6 +43,9 @@ html, body {
 body {
     margin: 0;
 }
+a:active {
+    outline: none;
+}
 .l-aes {
     height: 100%;
     font-family: 'PT Sans';
