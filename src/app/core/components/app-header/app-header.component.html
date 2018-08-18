@@ -6,8 +6,8 @@
   </div>
   <div style="padding: .25em; margin: 0 .25em -1px .25em; color: #444; flex: 1; font-size: .7em; text-transform: uppercase;">
     {{title}}
-  </div>  
-  <svg style="padding: .25em; margin: 0 .25em -1px .5em; width: 14px; height: 14px; fill: none;" class="feather">
+  </div>
+  <svg (click)="close()" style="padding: .25em; margin: 0 .25em -1px .5em; width: 14px; height: 14px; fill: none;" class="feather">
     <use xlink:href="./assets/feather-sprite.svg#x"/>
   </svg>
 </div>
@@ -22,7 +22,7 @@
       {{title}}
     </div>
     <div style="color: #444;; font-size: .2em; text-transform: uppercase;">
-      <svg style="width: 14px; height: 14px; fill: none;" class="feather">
+      <svg (click)="close()" style="width: 14px; height: 14px; fill: none;" class="feather">
         <use xlink:href="./assets/feather-sprite.svg#x"/>
       </svg>
     </div>

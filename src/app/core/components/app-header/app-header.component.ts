@@ -31,4 +31,8 @@ export class AppHeaderComponent {
     });
   }
 
+  close() {
+    this.appService.unload()
+  }
+
 }

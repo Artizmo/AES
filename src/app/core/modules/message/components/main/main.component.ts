@@ -1,17 +1,19 @@
 // angular modules
-import { Component } from '@angular/core';
+import { Component, OnDestroy } from '@angular/core';
 
 // services
 import { AppService } from 'services/app.service';
 
 interface App {
   UUID: string,
-  title: string
+  title: string,
+  path: string
 }
 
 let app: App = {
   UUID: 'MSGHASH',
-  title: 'Message Center'
+  title: 'Message Center',
+  path: 'messages'
 };
 
 @Component({
@@ -19,9 +21,11 @@ let app: App = {
   templateUrl: './main.component.html',
   styleUrls: ['./main.component.css']
 })
-export class MainComponent {
-  constructor(private appService: AppService ) { 
+export class MainComponent implements OnDestroy {
+  constructor(private appService: AppService ) {
     this.appService.load(app);
   }
-
+  ngOnDestroy() {
+    console.log('destroying message center component')
+  }
 }
