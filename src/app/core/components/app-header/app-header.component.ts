@@ -7,7 +7,8 @@ import { AesService } from 'services/aes.service';
 
 interface App {
   UUID: string,
-  title: string
+  title: string,
+  path: string
 }
 
 interface AppState {
@@ -23,16 +24,24 @@ interface AppState {
 export class AppHeaderComponent {
   public title: string;
   public appCount: number;
+  public currentApp: App;
+  public apps: App[];
   constructor(private appService: AppService, private aesService: AesService) {
     appService.applications$.subscribe((appState: AppState) => {
       this.title = appState.current.title;
       this.aesService.setPortalTitle(appState.current.title);
       this.appCount = Object.keys(appState.loaded).length;
+      this.apps = Object.keys(appState.loaded).map(key => appState.loaded[key]);
+      this.currentApp = appState.current;
     });
   }
 
-  close() {
-    this.appService.unload()
+  __handleSwitch(app) {
+    this.appService.switch(app);
+  }
+
+  __handleClose(app) {
+    this.appService.unload(app)
   }
 
 }

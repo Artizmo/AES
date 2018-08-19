@@ -30,11 +30,9 @@
 .feather {
     width: 24px;
     height: 24px;
-    stroke: #444;
     stroke-width: 2;
     stroke-linecap: round;
     stroke-linejoin: round;
-    fill: #ccc;
 }
 
 html, body {
@@ -51,12 +49,12 @@ a:active {
     font-family: 'PT Sans';
 }
 .l-aes__side {
-    background-color: #e4e4e4;
-    color: #fff;
+    background-color: #fff;
     display: flex;
     flex-direction: column;
     padding: .25em 0;
     width: 50px;
+    border-right: 1px solid #eee;
 }
 .l-aes__content {
     color: #777;
@@ -92,15 +90,12 @@ a:active {
     align-items: center;
     padding: .5em 0.75em;
     cursor: default;
-    margin: .5em .15em;
+    margin: .5em 0;
     user-select: none;
     outline: none;
 }
 .side-tool:hover {
-    background-color: #cccccc6b;
-}
-.side-tool:active {
-    background-color: #bbbbbb6b;
+    background-color: #f4f4f4;
 }
 .side-tool__icon .feather {
     stroke: #444;

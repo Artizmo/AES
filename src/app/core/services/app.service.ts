@@ -39,17 +39,22 @@ export class AppService {
   }
 
   unload(app?: App) {
-    console.log('app', app)
     app = app || this.__applications.current;
     if (this.__applications.loaded[app.UUID]) {
       delete this.__applications.loaded[app.UUID];
     }
     this.switch();
     this.__applicationsSubject.next(this.__applications);
-    console.log('state', this.__applications.loaded)
   }
 
-  switch() {
+  switch(app?: App) {
+    // if app is specified, just nav to it
+    if (app) {
+      if (app.UUID !== this.__applications.current.UUID) {
+        this.router.navigateByUrl(`/${app.path}`);
+      }
+      return;
+    }
     // if there are no apps, nav to base URL
     if (!Object.keys(this.__applications.loaded).length) {
       this.router.navigateByUrl('/');

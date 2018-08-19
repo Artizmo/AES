@@ -12,7 +12,7 @@ interface App {
 
 let app: App = {
   UUID: 'ESNHASH',
-  title: 'ESN',
+  title: 'ESN™ Gas & Power',
   path: 'esn'
 };
 

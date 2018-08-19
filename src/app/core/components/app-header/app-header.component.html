@@ -1,28 +1,28 @@
-<div *ngIf="appCount == 1" style="border-bottom: 1px solid #eee; display: flex; padding: .5em 0;">
+<div *ngIf="appCount == 1" style="border-bottom: 1px solid #eee; align-items: center; display: flex; padding: .5em 0;">
   <div style="margin: 0 .25em 0 .5em; display: flex; align-items: center; justify-content: center;">
     <svg style="width: 18px; height: 18px; fill: none; stroke: #48b2e8;" class="feather">
       <use xlink:href="./assets/feather-sprite.svg#box"/>
     </svg>
   </div>
-  <div style="padding: .25em; margin: 0 .25em -1px .25em; color: #444; flex: 1; font-size: .7em; text-transform: uppercase;">
+  <div style="padding: .25em; margin: 0 0 -1px .25em; color: #444; font-size: .7em; text-transform: uppercase;">
     {{title}}
   </div>
-  <svg (click)="close()" style="padding: .25em; margin: 0 .25em -1px .5em; width: 14px; height: 14px; fill: none;" class="feather">
+  <svg class="closeIcon feather" (click)="__handleClose()" style="padding: .25em 0; margin: 0 .25em -1px .5em; width: 14px; height: 14px; fill: none;">
     <use xlink:href="./assets/feather-sprite.svg#x"/>
   </svg>
 </div>
 <div *ngIf="appCount > 1" style="border-bottom: 1px solid #d6d6d6; display: flex; background-color: #f2f2f2; padding: .5em 0 0 0;">
-  <div style="display: flex; align-items: center; border-style: solid; border-color: #d6d6d6; border-width: 1px 1px 0 1px; border-top-left-radius: .25em; border-top-right-radius: .25em; width: 9em; padding: .25em; margin: 0 .25em -1px .25em; background-color: #fff;">
-    <div style="width: 25%; display: flex; justify-content: center;">
-      <svg style="width: 18px; height: 18px; fill: none; stroke: #48b2e8;" class="feather">
+  <div (click)="__handleSwitch(app)" class="tab" *ngFor="let app of apps" [ngClass]="{'current': (app.UUID === currentApp.UUID)}">
+    <div style="display: flex; justify-content: center;">
+      <svg class="appIcon feather" style="width: 18px; height: 18px; fill: none;">
         <use xlink:href="./assets/feather-sprite.svg#box"/>
       </svg>
     </div>
-    <div style="color: #444; flex: 1; font-size: .7em; text-transform: uppercase;">
-      {{title}}
+    <div class="title">
+      {{app.title}}
     </div>
-    <div style="color: #444;; font-size: .2em; text-transform: uppercase;">
-      <svg (click)="close()" style="width: 14px; height: 14px; fill: none;" class="feather">
+    <div style="display: flex; align-items: center; font-size: .2em; text-transform: uppercase;">
+      <svg class="closeIcon feather" (click)="__handleClose(app)" style="width: 14px; height: 14px; fill: none;">
         <use xlink:href="./assets/feather-sprite.svg#x"/>
       </svg>
     </div>
