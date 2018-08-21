@@ -1,5 +1,5 @@
 // angular modules
-import { Component, OnDestroy, ComponentRef } from '@angular/core';
+import { Component, OnDestroy } from '@angular/core';
 
 // services
 import { AppService } from 'services/app.service';

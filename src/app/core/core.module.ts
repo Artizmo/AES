@@ -50,18 +50,18 @@ const routes: Routes = [
 @NgModule({
   imports: [
     CommonModule,
+    SharedModule,
     BrowserAnimationsModule,
     RouterModule.forRoot(routes),
-    SharedModule,
     FormsModule,
     HttpClientModule
   ],
   exports: [
     RouterModule,
+    SharedModule,
     CoreComponent,
     HeaderComponent,
     FormsModule,
-    SharedModule,
     HttpClientModule
   ],
   providers: [AppService, AuthService, CookieService, UserService],
