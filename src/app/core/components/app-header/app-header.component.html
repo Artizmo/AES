@@ -1,4 +1,4 @@
-<div *ngIf="appCount > 0" style="padding: .5em; display: flex; background-color: #fff;">
+<div *ngIf="appCount > 0" style="border-bottom: 1px solid #eee; padding: .5em; display: flex; background-color: #fff;">
   <mat-card (click)="__handleSwitch(app)" class="tab" *ngFor="let app of apps" [ngClass]="{'current': (app.UUID === currentApp.UUID)}">
     <div style="display: flex; justify-content: center;">
       <svg class="appIcon feather" style="width: 18px; height: 18px; fill: none;">
