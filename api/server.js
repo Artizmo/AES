@@ -46,22 +46,22 @@ app.post('/api/login', (req, res) => {
                             bcrypt
                                 .compare(password, pHash.hash)
                                 .then(cres => {
-                                    if (cres) {                                         
+                                    if (cres) {
                                         // return success status and cookie in header
                                         let token = jwt.sign(user, 'secretkeydude!')
                                         res
                                             .status(200)
-                                            .cookie('aes-token', token, { httpOnly: false, sameSite: true, path: '/' })
+                                            .cookie('aes-token', token, { httpOnly: false, path: '/' })
                                             .send()
                                     } else {
                                         res
-                                            .status(401).send()
+                                            .status(418).send()
                                     }
                                 })
                         }
                     })
             }
-        })    
+        })
 })
 app.get('/api/logout', (req, res) => {
     res

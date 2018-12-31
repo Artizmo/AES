@@ -1,0 +1,17 @@
+<div *ngIf="appCount > 0" style="border-bottom: 1px solid #eee; padding: .5em; display: flex; background-color: #fff;">
+  <mat-card (click)="__handleSwitch(app)" class="tab" *ngFor="let app of apps" [ngClass]="{'current': (app.UUID === currentApp.UUID)}">
+    <div style="display: flex; justify-content: center;">
+      <svg class="appIcon feather" style="width: 18px; height: 18px; fill: none;">
+        <use xlink:href="./assets/feather-sprite.svg#box"/>
+      </svg>
+    </div>
+    <div class="title">
+      {{app.title}}
+    </div>
+    <div style="display: flex; align-items: center; font-size: .2em; text-transform: uppercase;">
+      <svg class="closeIcon feather" (click)="__handleClose(app)" style="width: 14px; height: 14px; fill: none;">
+        <use xlink:href="./assets/feather-sprite.svg#x"/>
+      </svg>
+    </div>
+  </mat-card>
+</div>

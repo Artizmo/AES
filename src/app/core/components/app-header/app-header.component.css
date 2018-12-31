@@ -1,0 +1,58 @@
+.tab {
+    display: flex; 
+    align-items: center; 
+    padding: .5em; 
+    margin: 0 .25em -1px .25em;
+    background-color: #fff;
+}
+
+.tab.mat-card:hover {
+    background-color: #70c3ec;
+}
+
+.tab .title {
+    padding: 0 .5em;
+    flex: 1; 
+    font-size: .7em; 
+    text-transform: uppercase;
+    cursor: default;    
+    color: #777;
+}
+
+.tab .appIcon {
+    stroke: #777;
+    fill: none;
+}
+
+.tab.current.mat-card:hover .appIcon {
+    stroke: #fff;
+}
+
+.closeIcon {
+    stroke: #444;
+}
+
+.tab.current { 
+    background-color: #48B2E8;
+}
+
+.tab.current .title {
+    color: #fff;
+}
+
+.tab.current .appIcon {
+    fill: none;
+    stroke: #a1d2eb;
+}
+
+.tab:not(.current):hover {
+    background-color: rgba(0, 0, 0, .1);
+}
+
+.tab:not(.current):hover .title {
+    /* color: #fff; */
+}
+
+.tab:not(.current):hover .appIcon {
+    /* stroke: #fff; */
+}

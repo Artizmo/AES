@@ -7,7 +7,7 @@
         "email": "dvader@sith.org",
         "organization": "Sith, Inc."
     },
-    {  
+    {
         "id": 102,
         "username": "bfett",
         "firstName": "Boba",
@@ -17,14 +17,6 @@
     },
     {
         "id": 103,
-        "username": "aakbar",
-        "firstName": "Admiral",
-        "lastName": "Akbar",
-        "email": "aakbar@rebelco.org",
-        "organization": "Rebel Co."
-    },
-    {
-        "id": 104,
         "username": "hsolo",
         "firstName": "Han",
         "lastName": "Solo",
@@ -32,4 +24,3 @@
         "organization": "Smugglers Inc."
     }
 ]
- 

@@ -1,7 +1,7 @@
 <!DOCTYPE html>
 <html>
 <head>
-    <title>Star Wars Login</title>
+    <title>AES</title>
 </head>
 <script src="https://cdnjs.cloudflare.com/ajax/libs/axios/0.18.0/axios.min.js"></script>
 
@@ -13,8 +13,6 @@
             <input type="password" style="margin: .5em 0;" name="password" />
             <div style="display: flex; flex-direction: column; justify-content: center;">
                 <button onclick="radness.login(event)" style="margin: .5em 0;">login</button>
-                <button onclick="radness.logout(event)" style="margin: .5em 0;">logout</button>
-                <button onclick="radness.nav(event)" style="margin: .5em 0;">goto portal</button>
             </div>
         </div>
     </form>
@@ -30,6 +28,7 @@
             axios.post('/api/login', { username, password })
                 .then(res => {
                     this.state.isLoggedin = true
+                    window.location = 'http://localhost:4200'
                 }, () => {
                 })
             e.preventDefault()
@@ -43,7 +42,6 @@
             e.preventDefault()
         }
         nav = e => {
-            window.location = 'http://localhost:4200'
             e.preventDefault()
         }
         return {

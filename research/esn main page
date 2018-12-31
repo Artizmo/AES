@@ -1,0 +1,20 @@
+Widgets
+
+1. Tie Out Activity
+-ready to open
+-awaiting counterparty
+-ready to send invoice
+-counterparty disagrees
+-ready for payment
+-paid
+-tie outs with invoices ready for download
+-tie outs with unread notes 
+
+2. Recent ESN Notifications
+-top 10 most recent ESN notifications
+
+3. App Activity
+-last 10 used apps with dates
+
+4. My ESN Checklist
+-a list of todos created by the user

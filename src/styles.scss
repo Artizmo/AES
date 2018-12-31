@@ -13,7 +13,7 @@
 @import '~@angular/material/prebuilt-themes/deeppurple-amber.css';
 
 @import url('https://fonts.googleapis.com/css?family=PT+Sans:400,400i,700,700i');
-@import url('https://fonts.googleapis.com/css?family=Open+Sans');
+@import url('https://fonts.googleapis.com/css?family=Open+Sans:700');
 @import url('https://fonts.googleapis.com/css?family=Work+Sans:400,600');
 
 @font-face {
@@ -30,11 +30,9 @@
 .feather {
     width: 24px;
     height: 24px;
-    stroke: #444;
     stroke-width: 2;
     stroke-linecap: round;
     stroke-linejoin: round;
-    fill: #ccc;
 }
 
 html, body {
@@ -43,22 +41,23 @@ html, body {
 body {
     margin: 0;
 }
+a:active {
+    outline: none;
+}
 .l-aes {
     height: 100%;
-    font-family: 'PT Sans';
+    font-family: "Open Sans","Helvetica Neue",Helvetica,Arial,sans-serif;
 }
 .l-aes__side {
-    background-color: #e4e4e4;
-    color: #fff;
+    background-color: #eee;
     display: flex;
     flex-direction: column;
-    padding: .25em 0;
-    width: 50px;
+    width: 65px;
 }
 .l-aes__content {
     color: #777;
     flex: 1;
-    background-color: #ffffff;
+    background-color: #f6f6f6;
     display: flex;
     flex-direction: column;
 }
@@ -87,16 +86,14 @@ body {
     display: flex;
     flex-direction: column;
     align-items: center;
-    padding: .5em 0.75em;
+    padding: .5em .75em;
     cursor: default;
-    margin: .5em .15em;
-    user-select: none
+    user-select: none;
+    outline: none;
+    margin: .5em 0;
 }
 .side-tool:hover {
-    background-color: #cccccc6b;
-}
-.side-tool:active {
-    background-color: #bbbbbb6b;
+    background-color: #eaeaea;
 }
 .side-tool__icon .feather {
     stroke: #444;
@@ -104,7 +101,7 @@ body {
     stroke-width: 2;
 }
 .side-tool__name {
-    font-size: .5em;
+    font-size: .7em;
     color: #444;
     text-transform: uppercase;
     word-wrap: break-word;
@@ -112,12 +109,12 @@ body {
 }
 
 .mat-menu-panel {
-    background-color: #48b2e8; 
+    background-color: #48b2e8;
     color: #fff;
 }
 
 .mat-menu-panel button {
-    font-family: 'PT Sans' !important;
+    //font-family: 'PT Sans' !important;
     font-size: .8em;
 }
 

@@ -20,11 +20,9 @@ export class AppsMenuComponent implements OnInit {
   ngOnInit() {
     this.appsMenu.onMenuClose.subscribe(() => {
       this.open = this.appsMenu.menuOpen;
-      console.log(this.open)
     })
     this.appsMenu.onMenuOpen.subscribe(() => {
       this.open = this.appsMenu.menuOpen;
-      console.log(this.open)
     })
   }
 

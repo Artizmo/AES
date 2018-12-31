@@ -1,0 +1,58 @@
+:host {
+    display: flex;
+    flex: 1;
+}
+
+.l-aes-app {
+    flex: 1;
+    display: flex;
+}
+
+.l-aes-app__side {
+    width: 15%;
+    display: flex;
+    flex-direction: column;
+}
+
+.l-aes-side__summary {
+    height: 20%;
+    border-right: 1px solid #eee;
+    border-bottom: 1px solid #eee;
+}
+
+.l-aes-side__details {
+    flex: 1;
+    border-right: 1px solid #eee;
+}
+
+.l-aes-app__main {
+    flex: 1;
+    display: flex;
+    flex-direction: column;
+}
+
+.l-aes-main__breadcrumbs {
+    padding: .75em .25em;
+    border-right: 1px solid #eee;
+    border-bottom: 1px solid #eee;
+}
+
+.l-aes-main__content {
+    flex: 1;
+    display: flex;
+    flex-direction: column;
+}
+
+.l-aes-app__message-center {
+    flex: 1;
+    display: flex;
+}
+
+.l-aes-message-center__messages {
+    width: 20%;
+    border-right: 1px solid #eee;
+}
+
+.l-aes-message-center__message {
+    flex: 1;
+}
